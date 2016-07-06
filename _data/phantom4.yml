@@ -1,5 +1,5 @@
 id:
-alias: pp
+images-dir: /public/img/Phantom4
 parts:
     Fabricante y modelo: DJI Innovations. DJI Phantom 4
     S/N de la aeronave: (Aparece en el compartimiento de la batería 07D)
@@ -11,3 +11,32 @@ parts:
     Piloto automático: Phantom P4 flight
     Emisora de control: DJI C2
     Estación de tierra: Modelo C2
+
+dimensions:
+    dimensionsimg: dimensions.PNG
+    data:
+        Longitud diagonal: 330 mm (590 mm incluidas las hélices)
+        Diámetro entre ejes de hélices: 330 mm
+        Altura total: 185 mm
+                
+views:
+    frontimg: front.PNG
+    front:
+        1: GPS
+        2: Hélices
+        3: Motor
+        4: Leds 
+        5: Sistema de detector de obstáculos
+        6: Tren de aterrizaje
+        7: Estabilizador y cámara
+    rearimg : rear.PNG
+    rear:
+        8: Batería inteligente
+        9: Puerto mini USB
+        10 : Ranura tarjeta MicroSD
+    upperimg: upper.PNG
+    upper:
+        11: Led indicador frontal
+        12: VPS  (Sensores de posicionamiento visual)
+        13: Sensores de posicionamiento ultrasonido
+        14: Led indicador de estado

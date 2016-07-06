@@ -2,7 +2,7 @@
 doc_Phantom4:
 - name: Descripción
   url: "/Phantom4/identificacion/"
-- name: Planos y gráficos
+- name: Planos, diagramas y esquemas
   url: "/Phantom4/planos/"
 - name: Lista de componentes
   url: "/Phantom4/componenetes/"
