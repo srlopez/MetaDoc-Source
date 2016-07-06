@@ -1,7 +1,3 @@
 ---
+title: Masas de la aeronave
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

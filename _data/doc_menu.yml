@@ -18,9 +18,3 @@
 
         - name: test data
           url: /pages/test
-
-    - name: test data
-      url: /pages/test
-
-- name: test data
-  url: /pages/test

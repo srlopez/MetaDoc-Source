@@ -41,21 +41,17 @@ module Jekyll
 =end
 
     def generate(site)
-      site.collections.each do |name, collection|
-        if name.start_with?('doc') # Folder _doc_XXXXX
-          collection.metadata['docs-size'] = collection.docs.size - 1 # Remove index
-          collection.metadata['doc-index'] = permalink_for(collection.docs[0],name)
-          Jekyll.logger.info "doc-index: #{collection.metadata['doc-index']}"
+      site.collections.select{|name| name.start_with?('doc')}.each do |name, collection|
+          collection.metadata['docs-size'] = collection.docs.size - 1 # Remove 0000000_index
 
           set_page_metadata name, collection
           assign_navigation_links collection
-        end 
       end
-      #generate_collection_menu site, Jekyll.sanitized_path(site.source, "_data/doc_collections.yml")
     end
 
     def set_page_metadata(collection_name, collection)
       collection_path = collection_path_for(collection_name)
+      Jekyll.logger.info "collection: /#{collection_path.join("/")}"
       #collection.docs.sort_by!(&:basename_without_ext).reverse.each_with_index do |d,idx|
 
       collection.docs.each do |d|
@@ -70,10 +66,9 @@ module Jekyll
           s.replace(sec_name) 
         end
 
-        # Al subir a GitHub el permalink ha mantenido el original, en local funciona pero en gh no
-        # vamos a mantener el original
-        # d.data['permalink'] = "/#{collection_path.join("/")}/#{doc_name}/"
-        d.data['permalink'] = permalink_for(d,collection_name)
+
+        d.data['permalink'] = "/#{collection_path.join("/")}/#{doc_name}/"
+        #d.data['permalink'] = permalink_for(d,collection_name)
 
         d.data['sections']  = doc_sections if doc_sections.size > 0
         d.data['doc-seq']   = doc_seq.ljust(12,"0")
@@ -104,6 +99,8 @@ module Jekyll
     end
 
     def permalink_for(document, collection_name)
+        # Al subir a GitHub el permalink ha mantenido el original, en local funciona pero en gh no
+        # vamos a mantener el original
         parts = document.path.partition(collection_name)
         return "/"+parts[1]+parts[2].chomp( ".md")
     end
@@ -130,36 +127,6 @@ module Jekyll
 
     def navigation_hash_for_document(d)
       {'title' => d.data['title'], 'url' => d.url}
-    end
-
-    def generate_collection_menu (site, filename) 
-      meta = {}    
-      site.collections.select{|name| name.start_with?('doc')}.each do |name,collection|
-        sections = {} 
-        meta[name] = []
-        collection.docs.drop(1).each do |d|
-          prev = meta[name]
-          name_sec = ""
-          d.data['sections'].each_with_index do |s,i|
-            name_sec << s
-            begin
-              sections[name_sec] = [] 
-              sec = {}
-              sec['name']=s
-              sec['submenu']=sections[name_sec]
-              prev.push sec
-            end if not sections[name_sec]
-            prev = sections[name_sec]
-          end if d.data['sections']
-          doc = {}
-          doc['name']=d.data['title']
-          doc['url']=d.data['permalink']
-          prev.push doc
-        end 
-      end
-
-      Jekyll.logger.info "Generated: #{filename}"
-      File.open(filename, 'w'){|f| f.write meta.to_yaml }
     end
 
   end

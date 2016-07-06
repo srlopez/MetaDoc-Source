@@ -1,7 +1,3 @@
 ---
+title: Sistema de propulsión
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

@@ -1,3 +1,5 @@
+require 'pathname'
+
 module Jekyll
   class MenuCollections < Generator
     VERSION = '0.1.0'
@@ -7,7 +9,7 @@ module Jekyll
     def generate(site)
       filename = '_data/' + Jekyll.configuration({})['menu']['docs']
       generate_collection_menu site, 
-          Jekyll.sanitized_path(site.source, filename)
+          Pathname(Jekyll.sanitized_path(site.source, filename))
     end
 
     def generate_collection_menu (site, filename) 
@@ -32,13 +34,11 @@ module Jekyll
           doc = {}
           doc['name']=d.data['title']
           doc['url']=d.data['permalink']
-          Jekyll.logger.info "url: #{d.data['url']}"
-          Jekyll.logger.info "per: #{d.data['permalink']}"
           prev.push doc
         end 
       end
 
-      Jekyll.logger.info "Generated: #{filename}"
+      Jekyll.logger.info "Generated: #{filename.basename}"
       File.open(filename, 'w'){|f| f.write meta.to_yaml }
     end
 

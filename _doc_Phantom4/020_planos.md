@@ -1,7 +1,3 @@
 ---
+title: Planos y gráficos 
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

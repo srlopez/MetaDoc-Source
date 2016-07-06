@@ -35,7 +35,7 @@ layout: default
   {% if page.page-num == 0 %}
     {{page.docs-size}} páginas
   {% else %}
-    <a href={{page.doc-index | prepend: site.baseurl }}>Index</a>
+    <a href="../index">Index</a>
     |  {{page.page-num}} / {{page.docs-size}}  
     |  <a href="#top">top</a>
     {% endif %}

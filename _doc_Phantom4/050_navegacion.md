@@ -1,7 +1,3 @@
 ---
+title: Sistema de navegación
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

@@ -1,7 +1,3 @@
 ---
+title: Progromación de la estación de tierra
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

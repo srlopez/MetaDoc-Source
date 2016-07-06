@@ -1,7 +1,3 @@
 ---
+title: Luces, pinturas e Identificación
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}

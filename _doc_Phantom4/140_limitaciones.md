@@ -1,7 +1,3 @@
 ---
+title: Actuaciones y limitaciones
 ---
-
-# Tabla de contenido
-
-
-{% include doc_index.md param='uno' %}
