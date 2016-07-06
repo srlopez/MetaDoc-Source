@@ -1,0 +1,63 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: MetaDoc!
+email: srlopezh@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Jekyll as static page server for cool documentation.
+baseurl: "/MetaDoc" # the subpath of your site, e.g. /blog
+url: "http://srlopez.github.io" # the base hostname & protocol for your site
+twitter_username: srlopezh
+github_username:  srlopez
+github:
+  repo: https://github.com/srlopez/MetaDoc
+
+# Build settings
+markdown: kramdown
+kramdown:
+  hard_wrap: true
+
+# app variables
+
+app:        MetaDoc
+version:    2.1.0
+
+include: [pages]
+
+menu: 
+  root: 'Utilizado en defaut.html para establecer el valor root en la variable item'
+  docs: doc_collections.yml
+  menu: doc_menu.yml
+
+collections:
+  doc_Phantom4:
+    title: DJI Phantom 4 - Caracterización
+    output: true
+  doc_FolderA_FolderB_MetaDron-v2:
+    title: Manual de Operaciones
+    output: true 
+  doc_FolderA_MetaDron:
+    title: Caracterización de la aeronave
+    output: true
+    
+defaults:
+  - scope:
+      path: ""
+      type: doc_FolderA_FolderB_MetaDron-v2
+    values:
+      layout: doc_page
+  - scope:
+      path: ""
+      type: doc_FolderA_MetaDron
+    values:
+      layout: doc_page
+  - scope:
+      path: ""
+      type: doc_Phantom4
+    values:
+      layout: doc_page

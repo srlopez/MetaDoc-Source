@@ -1,0 +1,104 @@
+/**
+ * Doc
+ */
+// COLORS
+$white: #fff;
+$main-color: #29C7D2;
+$sub-color: #253FE1;
+$color-dark: #333;
+
+$color__bg: $sub-color;
+$color__sidebar: $white;
+$color__toggle: $sub-color;
+$color__highlight: $color-dark;
+
+$nav_font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+.doc-header {
+    margin-bottom: $spacing-unit;
+}
+
+.doc-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin: 2px;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.doc-subtitle {
+    font-size: 24px;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: $grey-color;
+
+    @include media-query($on-laptop) {
+        font-size: 20px;
+    }
+}
+
+.doc-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
+
+
+.doc-navigation {
+  font: $nav_font;
+  color:$color-dark;
+  width: 100%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $color-dark;
+  }
+
+  ul {
+    margin: 0;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    color: $color-dark;
+  }
+
+  li { 
+    display: table-cell;
+    text-align: center
+  }
+
+  .next {
+    text-align: right;
+  }
+
+  .prev {
+    text-align: left;
+  }
+
+}

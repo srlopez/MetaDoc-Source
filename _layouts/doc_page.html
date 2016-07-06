@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<article class="doc">
+
+  <header class="doc-header">
+    <h1 class="doc-title">{{ page.title }}</h1>
+    
+    <h2 class="doc-subtitle">
+    {% if page.subtitle %}{{ page.subtitle }}{% endif %}
+    {% if page.subtitle and page.sections %} | {% endif %}
+    {{ page.sections | join:' | '  }}
+    </h2>
+  </header>
+
+  <div class="doc-content">
+    {{ content }}
+  </div>
+
+</article>
+
+<!-- Doc Navigation -->
+<div class="doc-navigation">
+{% unless page.page-num == 0 %}{{page.doc-title}}{% endunless %}
+
+<ul>
+  <li class="prev">
+    {% if page.previous.url %}
+    <a href="{{page.previous.url | prepend: site.baseurl }}">&laquo; {{page.previous.title |  truncate: 15  }}</a>
+    {% endif %}
+  </li>
+
+
+  <li>
+  {% if page.page-num == 0 %}
+    {{page.docs-size}} páginas
+  {% else %}
+    <a href={{page.doc-index | prepend: site.baseurl }}>Index</a>
+    |  {{page.page-num}} / {{page.docs-size}}  
+    |  <a href="#top">top</a>
+    {% endif %}
+  </li>
+
+  <li class="next">
+    {% if page.next.url %}
+    <a href="{{page.next.url | prepend: site.baseurl }}">{{page.next.title |  truncate: 15 }} &raquo;</a>
+    {% endif %}
+  </li>
+</ul>
+</div>

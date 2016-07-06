@@ -1,0 +1,57 @@
+<input type="checkbox" id="sidebar-toggle" />
+
+<sidebar>
+  <label id="sidebar-label" for="sidebar-toggle" class="sidebar-label"><i   class="fa fa-plus-circle  icon"></i></label>
+
+  <header><img src= "{{'/public/img/logo.png' | prepend: site.baseurl }}" alt="MetaDoc" height="56px" ></header>
+
+    <sidebar-nav>
+    <!--span class="nav-item">just item</span-->
+<!--
+Menu items are captured from _data/doc_menu.yml
+Pages are not added dynamically like inside this comment. But can be added directly like Home and About 
+
+    <a class="sidebar-nav-item{% if page.title == "Home" %} active{% endif %}" href="/">Home</a>
+
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    {% assign pages_list = site.pages %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.layout == "page" %}
+          <a class="sidebar-nav-item" href="{{ node.url }}">{{ node.title }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+-->
+
+<!--
+      The next included code generates a sidebar nav of data in _data/doc_menu and _data_collections as this
+
+      <input id="drop7" type="checkbox">
+      <label for="drop7" class="sidebar-nav-item">drop 7 &#9662;</label>
+      <ul class="drop">
+        <li><a class="sidebar-nav-item" href="/">Home</a></li>
+      </ul>
+-->
+
+    {% assign item=site.menu %}
+    {% include doc_sidebar.md menu=site.data.doc_menu %}
+
+    <a href="{{ site.github.repo }}" target="_blank">GitHub project</a>
+
+    <!--span class="nav-item">end item</span-->
+  </sidebar-nav>
+    
+  <footer>  
+    {{ site.app }} v{{ site.version }}
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+    </p> 
+  </footer>
+</sidebar>
+

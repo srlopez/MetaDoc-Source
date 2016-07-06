@@ -1,0 +1,60 @@
+---
+doc_Phantom4:
+- name: Descripción
+  url: "/doc_Phantom4/010_identificacion"
+- name: 020_planos
+  url: "/doc_Phantom4/020_planos"
+- name: 030_lista_de_componenetes
+  url: "/doc_Phantom4/030_lista_de_componenetes"
+- name: 040_masas
+  url: "/doc_Phantom4/040_masas"
+- name: 050_navegacion
+  url: "/doc_Phantom4/050_navegacion"
+- name: 060_aliemtacion
+  url: "/doc_Phantom4/060_aliemtacion"
+- name: 070_propulsion
+  url: "/doc_Phantom4/070_propulsion"
+- name: 080_emisora
+  url: "/doc_Phantom4/080_emisora"
+- name: 090_fpv
+  url: "/doc_Phantom4/090_fpv"
+- name: 100_dji_go
+  url: "/doc_Phantom4/100_dji_Go"
+- name: 110_carga_de_pago
+  url: "/doc_Phantom4/110_carga_de_pago"
+- name: 120_terminacion
+  url: "/doc_Phantom4/120_terminacion"
+- name: 130_luces_y_pinturas
+  url: "/doc_Phantom4/130_luces_y_pinturas"
+- name: 140_limitaciones
+  url: "/doc_Phantom4/140_limitaciones"
+- name: 150_comunicaciones
+  url: "/doc_Phantom4/150_comunicaciones"
+doc_FolderA_FolderB_MetaDron-v2:
+- name: 0100 CIEN
+  url: "/doc_FolderA_FolderB_MetaDron-v2/0100_cien"
+- name: section1
+  submenu:
+  - name: SubSect1
+    submenu:
+    - name: 0001 in section1 and new seub
+      url: "/doc_FolderA_FolderB_MetaDron-v2/01_section1/01_SubSect1/0001_InSub"
+    - name: 0009 tets
+      url: "/doc_FolderA_FolderB_MetaDron-v2/01_section1/01_SubSect1/0009_otro"
+    - name: 0205 tets
+      url: "/doc_FolderA_FolderB_MetaDron-v2/01_section1/01_SubSect1/0205_test"
+    - name: 0300 tets
+      url: "/doc_FolderA_FolderB_MetaDron-v2/01_section1/01_SubSect1/0300_eso"
+  - name: 0234 Middle
+    url: "/doc_FolderA_FolderB_MetaDron-v2/01_section1/0234_Middle"
+- name: section2
+  submenu:
+  - name: 0202 in section2
+    url: "/doc_FolderA_FolderB_MetaDron-v2/02_section2/0202_superSub"
+- name: 0010 root folder
+  url: "/doc_FolderA_FolderB_MetaDron-v2/0310_item67"
+doc_FolderA_MetaDron:
+- name: item 005
+  url: "/doc_FolderA_MetaDron/005_item"
+- name: 010 item 010
+  url: "/doc_FolderA_MetaDron/010_item2"

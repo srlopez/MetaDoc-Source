@@ -1,0 +1,26 @@
+- name: Home
+  url: /
+
+- name: About
+  url: /about
+
+- name: Phantom4
+  collection: doc_Phantom4
+
+- name: Apédice D
+  submenu: 
+
+    - name: Phantom4
+      include: doc_Phantom4
+
+    - name: test sub
+      submenu: 
+
+        - name: test data
+          url: /pages/test
+
+    - name: test data
+      url: /pages/test
+
+- name: test data
+  url: /pages/test
