@@ -1,21 +1,24 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
 // COLORS
-$white: #222;
+$white: #fdfdfd;
 $main-color: #2947D2;
-$sub-color: #fffffe; //#eefbfd;
-$label__color: #e00;
+
+$sub-color: rgba(2, 2, 2, 0.96);//#eefbfd;
+$label__color: #111;
 
 $color__bg: $sub-color;
 $color__sidebar: $sub-color;
 $color__sidebar-nav: $sub-color;
 $color__toggle: $sub-color;
-$color__text: $white;
+$color__text: #555;
+$color__line: #111;
+$color__linespecial: #555;
 
 $nav_font: 400 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // SIZES
-$width__sidebar: 16em;
+$width__sidebar: 18em;
 
 
 #sidebar-toggle{
@@ -35,7 +38,7 @@ $width__sidebar: 16em;
   position: fixed;
   margin-top: 1em;
   margin-left: $width__sidebar ;
-  transform: rotate(45deg);
+  transform: rotate(180deg);
   cursor: pointer;
   transition: .7s;
   .icon {
@@ -43,7 +46,7 @@ $width__sidebar: 16em;
     color: $label__color;
   }
   /* sombra */
-  text-shadow: 2px 1px  rgba(75,75,75, 0.75);
+  text-shadow: 1px 1px 5px #111;
 }
 
 sidebar {
@@ -52,9 +55,8 @@ sidebar {
   /* muy importantes */
   z-index: 1;
   position: absolute; 
-  height: 100%;
+  height: 999%;
   top: 0px;
-  bottom: 0px;
   /* decoration */
   background-color: $color__sidebar;
   color: $color__text;
@@ -68,7 +70,7 @@ sidebar {
 
   header{
     border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    border-bottom: 1px solid $color__linespecial;
     min-height: 56px;
 
     position: relative;
@@ -81,21 +83,21 @@ sidebar {
   
   footer{
     padding: 10px 10px;
-    border-top: 1px solid$grey-color-light;
+    border-top: 1px solid $color__linespecial;
     font-size: 15px;
-    color: $grey-color;
+    color: $color__text;
   }
   
   %nav-item {
     margin-left: 10px;
     display: block;
     padding: 10px 10px;
-    border-bottom: 1px dotted $grey-color-light;
+    border-bottom: 1px solid $color__line;
     font: $nav_font;
   }
 
   sidebar-nav{
-    background-color: $color__sidebar-nav;
+    /* background-color: $color__sidebar-nav; */
     display: block;
     
     .nav-item{
@@ -130,7 +132,8 @@ sidebar {
     }
     
     ul {
-      margin-left: 10px
+      margin-left: 10px;
+      margin-bottom: 0px;
     }
     
     label, li{
