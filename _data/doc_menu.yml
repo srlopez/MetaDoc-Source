@@ -2,7 +2,7 @@
   url: /
 
 - name: About
-  url: /about
+  url: /about/
 
 - name: Phantom4
   collection: doc_Phantom4
@@ -17,4 +17,4 @@
       submenu: 
 
         - name: test data
-          url: /pages/test
+          url: /pages/test/

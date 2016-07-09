@@ -47,6 +47,7 @@ module Jekyll
           set_page_metadata name, collection
           assign_navigation_links collection
       end
+      generate_menu(site)
     end
 
     def set_page_metadata(collection_name, collection)
@@ -68,8 +69,6 @@ module Jekyll
 
 
         d.data['permalink'] = "/#{collection_path.join("/")}/#{doc_name}/"
-        #d.data['permalink'] = permalink_for(d,collection_name)
-
         d.data['sections']  = doc_sections if doc_sections.size > 0
         d.data['doc-seq']   = doc_seq.ljust(12,"0")
         d.data['doc-title'] = collection.metadata['title']
@@ -98,13 +97,6 @@ module Jekyll
       r.match(s).to_a
     end
 
-    def permalink_for(document, collection_name)
-        # Al subir a GitHub el permalink ha mantenido el original, en local funciona pero en gh no
-        # vamos a mantener el original
-        parts = document.path.partition(collection_name)
-        return "/"+parts[1]+parts[2].chomp( ".md")
-    end
-
     def assign_navigation_links(collection)
       sorted_collection(collection).each_cons(2).each_with_index  do |(d1, d2),idx|
         #d1.data['next']     = navigation_hash_for_document d2
@@ -129,5 +121,41 @@ module Jekyll
       {'title' => d.data['title'], 'url' => d.url}
     end
 
+    def generate_menu(site)
+      filename = '_data/' + Jekyll.configuration({})['menu']['docs']
+      generate_collection_menu site, 
+          Pathname(Jekyll.sanitized_path(site.source, filename))
+    end
+
+    def generate_collection_menu (site, filename) 
+      meta = {}    
+      site.collections.select{|name| name.start_with?('doc')}.each do |name,collection|
+        sections = {} 
+        meta[name] = []
+        collection.docs.drop(1).each do |d|
+          prev = meta[name]
+          name_sec = ""
+          d.data['sections'].each_with_index do |s,i|
+            name_sec << s
+            begin
+              sections[name_sec] = [] 
+              sec = {}
+              sec['name']=s
+              sec['submenu']=sections[name_sec]
+              prev.push sec
+            end if not sections[name_sec]
+            prev = sections[name_sec]
+          end if d.data['sections']
+          doc = {}
+          doc['name']=d.data['title']
+          doc['url']=d.data['permalink']
+          prev.push doc
+        end 
+      end
+
+      Jekyll.logger.info "Generated: #{filename.basename}"
+      File.open(filename, 'w'){|f| f.write meta.to_yaml }
+    end
+    
   end
 end

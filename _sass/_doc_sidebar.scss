@@ -13,7 +13,9 @@ $color__sidebar-nav: $sub-color;
 $color__toggle: $sub-color;
 $color__text: #555;
 $color__line: #111;
+$color__active: #222;
 $color__linespecial: #555;
+
 
 $nav_font: 400 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -132,11 +134,12 @@ sidebar {
     }
     
     ul {
+      list-style-type: none;
       margin-left: 10px;
       margin-bottom: 0px;
     }
     
-    label, li{
+    label, li, a{
        @extend %nav-item;
     }
     label:after { 
@@ -148,6 +151,7 @@ sidebar {
 
     a{
       @extend %nav-item;
+      text-decoration: none;
       color: inherit;
       &:visited{
           color: inherit;
@@ -162,11 +166,17 @@ sidebar {
       margin-left: 0px;
     }
     
-  
-    *:hover {
+    li.active{
+      background-color: $color__active;
+    }
+
+    li:hover, label:hover, a:hover {
       cursor:pointer;
       text-decoration: none;
+      background-color: $color__line;
     }
+
+
   } /* sidebar-nav */
   
 }/* sidebar */

@@ -40,3 +40,66 @@ views:
         12: VPS  (Sensores de posicionamiento visual)
         13: Sensores de posicionamiento ultrasonido
         14: Led indicador de estado
+
+bateries:
+    bateriesimg: bateries.PNG
+    data:
+        Número de baterías: 	1
+        Tipo de batería:	 LiPo 4s
+        Voltaje batería: 	15.2V
+        Capacidad: 	5350mAh
+        Energía: 	81,3 Wh
+        Peso batería:	 462 g
+        Tiempo de vuelo:	Max. 28 minutos
+        Temperatura de funcionamiento:	 -10º a 40º
+        Máxima potencia de carga: 	100 W
+
+propulsion:
+    propulsionimg: propulsion.PNG
+    data:
+        Número de motores: 	4
+        Modelo de motor: 2312S
+        Dimensiones estator: 	30x12 mm.
+        Tipo: 	Brushless sin escobillas
+        Motores de hélice a derecha: 2
+        Motores de hélices a izquierda: 2
+        Sistema de ajueste de hélices: liberación rápida.
+
+radio:
+    radioimg: radio1.PNG
+    radioimg2: radio2.PNG
+    data:
+        Modelo: GL300C
+        Frecuencia de funcionamiento: 	2400 a 2483 Mhz.
+        Máximo alcance: 	más de 3.5 km en campo abierto (sin obstáculos y sin interferencia).
+        Video y telemetría: Integrado en sistema de control.
+        Salida de video:	 USB (HDMI Opcional).
+        Temperatura de funcionamiento: 	0 a 40º.
+        Batería interna: 	LiPo 2s 6000 mAh.
+        Terminal de monitorización: Soporte para móvil o tablet (Máximo 9”)
+        Sensibilidad del receptor:		 -101 dBm ±2 dBm.
+        Potencia del transmisor (EIRP): 	40mW , 16 dBm . Cumple normativa CE.
+        Voltaje de funcionamiento: 	7.4V
+        Consumo:				 1.2A.
+
+fpv:
+    data:
+        Aplicación: 	DJI GO.
+        Frecuencia: 	2.4Ghz
+        Potencia emisión: 	100mW (CE).
+        Densidad de potencia: 	6.9mW /Mhz.
+        Calidad vídeo: 	720P @ 30 fps.
+        Latencia: 	220 ms.
+        Android v: 4.1.2 o superior.
+        iOS v: 8.0 o superior.
+app:
+    appimg: djigoapp.png
+
+
+carga:
+    cargaimg: cargadepago.PNG
+    data:
+
+luces:
+    lucesimg: luces1.PNG
+    lucesimg2: luces2.PNG

@@ -16,3 +16,4 @@ Los datos de Fabricante, modelo y número de serie de la aeronave, motor, hélic
 |=|==:|=|:==|
 {% for x in site.data.phantom4.parts %}
 ||{{ x[0] }}||**{{x[1]}}**{% endfor %}|
+

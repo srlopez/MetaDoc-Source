@@ -1,4 +1,4 @@
-<input type="checkbox" id="sidebar-toggle" checked="checked" />
+<input type="checkbox" id="sidebar-toggle"  />
 
 <sidebar>
   <label id="sidebar-label" for="sidebar-toggle" class="sidebar-label"><i   class="fa fa-share-square-o icon"></i></label>
@@ -54,4 +54,21 @@ Pages are not added dynamically like inside this comment. But can be added direc
     </p> 
   </footer>
 </sidebar>
-
+<script>
+(function() {
+  /* look for the anchor with the current url */
+  var url = window.location.href ;
+  url = '/'+url.replace (/^[a-z]{4}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
+  var hrefs = document.querySelectorAll('sidebar a[href^="'+url+'"]');
+  /* look for his parent a li element */
+  hrefs[0].parentNode.className+='active'; /* li */
+  /* look for the ul's */
+  var up = hrefs[0].parentNode.parentNode; /* a <- li <- ul */
+  while(up.tagName=='UL'){
+    /*  and look for the inputs to check an remain the ul open */
+    var input=up.previousElementSibling.previousElementSibling /* ul label input */
+    if(input && input.tagName=='INPUT') input.checked="checked"
+    up = up.parentNode
+  }
+})();
+</script>
