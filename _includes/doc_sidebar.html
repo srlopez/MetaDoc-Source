@@ -58,8 +58,10 @@ Pages are not added dynamically like inside this comment. But can be added direc
 (function() {
   /* look for the anchor with the current url */
   var url = window.location.href ;
-  url = '/'+url.replace (/^[a-z]{4}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
+  url = '/'+url.replace (/^[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
   var hrefs = document.querySelectorAll('sidebar a[href^="'+url+'"]');
+  console.log(url)
+  console.log(hrefs[0])
   /* look for his parent a li element */
   hrefs[0].parentNode.className+='active'; /* li */
   /* look for the ul's */
