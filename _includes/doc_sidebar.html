@@ -57,8 +57,7 @@ Pages are not added dynamically like inside this comment. But can be added direc
 <script>
 (function() {
   /* look for the anchor with the current url */
-  var url = window.location.href ;
-  url = '/'+url.replace (/^[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
+  var url = window.location.pathname 
   var hrefs = document.querySelectorAll('sidebar a[href^="'+url+'"]');
   console.log(url)
   console.log(hrefs[0])
